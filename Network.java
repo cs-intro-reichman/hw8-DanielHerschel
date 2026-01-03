@@ -62,7 +62,7 @@ public class Network {
         User user1 = getUser(name1);
         User user2 = getUser(name2);
 
-        if (user1 == null || user2 == null) {
+        if (user1 == null || user2 == null || user1 == user2) {
             return false;
         }
 
@@ -138,7 +138,12 @@ public class Network {
 
     // Returns a textual description of all the users in this network, and who they follow.
     public String toString() {
-       //// Replace the following statement with your code
-       return null;
+        String ans = "\n";
+        for (User user : users) {
+            if (user != null) {
+                ans += user + "\n";
+            }
+        }
+        return ans;
     }
 }
